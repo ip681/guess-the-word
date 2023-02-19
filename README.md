@@ -1,2 +1,2 @@
 # Guess-the-word
-test
+My first code in GitHub
