@@ -18,10 +18,12 @@ man = ["________ \n| \n| \n| \n| \n| \n| \n|____________",
 word = random.choice(words)
 guesses = ""
 wrong_guesses = ""
+MAX_TURNS = 12
 turns = 12
 
 print("Guess the word")
 while turns > 0:
+
     print("___________________________________________________________________\n")
     failed = 0
     for char in word:
@@ -30,13 +32,17 @@ while turns > 0:
         else:
             print("_", end=" ")
             failed += 1
+
     print("") # new line
     if failed == 0:
         print("You Win!")
         print(f"The word is: {word}")
         break
+
     print()
+
     while True:
+
         guess = input("Input letter: ")
 
         if len(guess) == 1 and guess.isalpha(): # check for more than one character and not letter character
@@ -45,12 +51,15 @@ while turns > 0:
         else:
             print("Enter a single letter (a-z).")
             continue
+
     guesses += guess
+
     if guess not in word: #checks if the letter entered is part of a word
         turns -= 1
         print(f"Wrong! You have {turns} more guesses")
         wrong_guesses += guess + " "
         if turns == 0:
             print("You Loose!")
+
     print(f"Wrong letters are: {wrong_guesses}")
-    print(man[12 - turns])
+    print(man[MAX_TURNS - turns])
