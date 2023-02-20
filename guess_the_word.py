@@ -16,12 +16,13 @@ man = ["________ \n| \n| \n| \n| \n| \n| \n|____________",
        "________ \n|      | \n|      O \n|     /|\\ \n|    / | \\ \n|     / \\ \n|    /   \\ \n|____________"]
 
 word = random.choice(words)
-print("Guess the word")
 guesses = ""
 wrong_letters = ""
 turns = 12
+
+print("Guess the word")
 while turns > 0:
-    print("___________________________________________________________________")
+    print("___________________________________________________________________\n")
     failed = 0
     for char in word:
         if char in guesses:
@@ -29,21 +30,21 @@ while turns > 0:
         else:
             print("_", end=" ")
             failed += 1
-    print("")
+    print("") # new line
     if failed == 0:
         print("You Win!")
         print(f"The word is: {word}")
         break
     print()
     while True:
-        guess = input('Input letter: ')
+        guess = input("Input letter: ")
 
-        if len(guess) == 1 and guess.isalpha():
-            print(guess.lower())
+        if len(guess) == 1 and guess.isalpha(): # check for more than one character and not letter character
+            guess = guess.lower() # make the letter lowercase if it is uppercase
             break
 
         else:
-            print('Enter a single letter (a-z).')
+            print("Enter a single letter (a-z).")
             continue
     guesses += guess
     if guess not in word:
