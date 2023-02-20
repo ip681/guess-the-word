@@ -1,12 +1,25 @@
 import random
 
 words = ['cat', 'computer', 'coffee']
+man = ["________ \n| \n| \n| \n| \n| \n| \n|____________",
+       "________ \n|      | \n| \n| \n| \n| \n| \n|____________",
+       "________ \n|      | \n|      O \n| \n| \n| \n| \n|____________",
+       "________ \n|      | \n|      O \n|      | \n| \n| \n| \n|____________",
+       "________ \n|      | \n|      O \n|      | \n|      | \n| \n| \n|____________",
+       "________ \n|      | \n|      O \n|     /| \n|      | \n| \n| \n|____________",
+       "________ \n|      | \n|      O \n|     /| \n|    / | \n| \n| \n|____________",
+       "________ \n|      | \n|      O \n|     /|\\ \n|    / | \n| \n| \n|____________",
+       "________ \n|      | \n|      O \n|     /|\\ \n|    / | \\ \n| \n| \n|____________",
+       "________ \n|      | \n|      O \n|     /|\\ \n|    / | \\ \n|     / \n| \n|____________",
+       "________ \n|      | \n|      O \n|     /|\\ \n|    / | \\ \n|     / \n|    / \n|____________",
+       "________ \n|      | \n|      O \n|     /|\\ \n|    / | \\ \n|     / \\ \n|    / \n|____________",
+       "________ \n|      | \n|      O \n|     /|\\ \n|    / | \\ \n|     / \\ \n|    /   \\ \n|____________"]
+
 word = random.choice(words)
 print("Guess the word")
 guesses = ""
 wrong_letters = ""
 turns = 12
-
 while turns > 0:
     print("___________________________________________________________________")
     failed = 0
@@ -28,6 +41,7 @@ while turns > 0:
         if len(guess) == 1 and guess.isalpha():
             print(guess.lower())
             break
+
         else:
             print('Enter a single letter (a-z).')
             continue
@@ -39,3 +53,4 @@ while turns > 0:
         if turns == 0:
             print("You Loose!")
     print(f"Wrong letters are: {wrong_letters}")
+    print(man[12 - turns])
