@@ -19,7 +19,7 @@ while turns > 0:
     print("")
     if failed == 0:
         print("You Win!")
-        print("The word is: ", word)
+        print(f"The word is: {word}")
         break
     print()
     while True:
@@ -34,7 +34,7 @@ while turns > 0:
     guesses += guess
     if guess not in word:
         turns -= 1
-        print("Wrong! You have", + turns, 'more guesses')
+        print(f"Wrong! You have {turns} more guesses")
         wrong_letters += guess + " "
         if turns == 0:
             print("You Loose!")
