@@ -1,11 +1,14 @@
 import random
+
 words = ['cat', 'computer', 'coffee']
 word = random.choice(words)
 print("Guess the word")
 guesses = ""
 wrong_letters = ""
 turns = 12
+
 while turns > 0:
+    print("___________________________________________________________________")
     failed = 0
     for char in word:
         if char in guesses:
@@ -14,13 +17,20 @@ while turns > 0:
             print("_", end=" ")
             failed += 1
     print("")
-    print("___________________________________________________________________")
     if failed == 0:
         print("You Win!")
         print("The word is: ", word)
         break
     print()
-    guess = input("Input letter:")
+    while True:
+        guess = input('Input letter: ')
+
+        if len(guess) == 1 and guess.isalpha():
+            print(guess.lower())
+            break
+        else:
+            print('Enter a single letter (a-z).')
+            continue
     guesses += guess
     if guess not in word:
         turns -= 1
