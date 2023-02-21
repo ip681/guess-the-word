@@ -1,4 +1,5 @@
 import random
+from termcolor import colored
 
 words = ['cat', 'computer', 'coffee']
 man = ["________ \n| \n| \n| \n| \n| \n| \n|____________",
@@ -24,7 +25,7 @@ turns = 12
 print("Guess the word")
 while turns > 0:
 
-    print("___________________________________________________________________\n")
+    print("____________________________________________________________________\n")
     failed = 0
     for char in word:
         if char in guesses:
@@ -35,7 +36,7 @@ while turns > 0:
 
     print("") # new line
     if failed == 0:
-        print("You Win!")
+        print(colored("You Win!", "green"))
         print(f"The word is: {word}")
         break
 
@@ -58,8 +59,9 @@ while turns > 0:
         turns -= 1
         print(f"Wrong! You have {turns} more guesses")
         wrong_guesses += guess + " "
+
         if turns == 0:
-            print("You Loose!")
+            print(colored("You Loose!", "red"))
 
     print(f"Wrong letters are: {wrong_guesses}")
     print(man[MAX_TURNS - turns])
