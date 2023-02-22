@@ -61,7 +61,7 @@ while turns > 0:
         wrong_guesses += guess + " "
 
         if turns == 0:
-            print(colored("You Loose!", "red"))
+            print(colored("You Loose!", "red")) # color text. wait fot test in cmd
 
     print(f"Wrong letters are: {wrong_guesses}")
     print(man[MAX_TURNS - turns])
