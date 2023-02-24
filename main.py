@@ -46,6 +46,10 @@ while turns > 0:
 
         guess = input("Input letter: ")
 
+        # if guesses.find(str(guess)) != -1:
+        #     print(f"You already try the letter {guess}")
+        #     turns += 1
+
         if len(guess) == 1 and guess.isalpha(): # check for more than one character and not letter character
             guess = guess.lower() # make the letter lowercase if it is uppercase
             break
