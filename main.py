@@ -1,5 +1,5 @@
 import random
-from termcolor import colored
+# from termcolor import colored
 
 current_theme = ""
 theme_name = ""
@@ -74,7 +74,7 @@ while turns > 0:
     print("")  # new line
 
     if failed == 0:
-        print(colored("You Win!", "green"))
+        print("You Win!")
         print(f"The word is: {word.upper()}")
         break
 
@@ -104,7 +104,7 @@ while turns > 0:
         wrong_guesses += guess + " "
 
         if turns == 0:
-            print(colored("You Loose!", "red"))  # color text. wait fot test in cmd
+            print("You Loose!")
             print(f"The word is: {word.upper()}")
 
     print(f'Theme is {theme_name.upper()}')
