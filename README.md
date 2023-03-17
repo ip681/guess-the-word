@@ -48,6 +48,6 @@
 +-----------------+-----------------+-----------------+-----------------+
 </pre>
 
-[Guess the word](guess-the-word-console.JPG "Guess the word")
+![Guess the word](guess-the-word-console.JPG "Guess the word")
 
 [Demo](https://replit.com/@IvoPetkov/Guesstheword)
